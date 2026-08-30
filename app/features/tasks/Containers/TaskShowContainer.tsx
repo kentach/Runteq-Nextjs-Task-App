@@ -5,7 +5,7 @@ import { getTaskById } from "../hooks/getTaskById";
 import type { Task } from "@/app/types/task";
 import { useParams } from "next/navigation";
 import TaskDetail from "../components/TaskDetail";
-import styles from "../styles/taskDetail.module.css";
+import styles from "../styles/TaskDetail.module.css";
 
 export default function TaskShowContainer() {
   const params = useParams<{ id?: string }>();

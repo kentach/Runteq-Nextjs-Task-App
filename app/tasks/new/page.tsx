@@ -1,5 +1,5 @@
-import TaskForm from "@/app/features/tasks/components/TaskForm";
+import TaskFormContainer from "../../features/tasks/Containers/TaskFormContainer";
 
 export default function TaskCreate() {
-  return <TaskForm />;
+  return <TaskFormContainer />;
 }
