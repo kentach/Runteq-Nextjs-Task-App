@@ -17,6 +17,7 @@ export default function TaskFormContainer() {
     description: "",
     priority: "medium",
     dueDate: "",
+    status: false
   });
 
   const handleChange = (
