@@ -1,12 +1,17 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import TaskForm from "../components/TaskForm";
 import styles from "../styles/TaskForm.module.css";
 import { useState } from "react";
 import type { Priority, TaskFormData } from "@/app/types/task";
+import { useRouter } from "next/navigation";
+import { createTask } from "../hooks/createTask";
 
 export default function TaskFormContainer() {
+  const router = useRouter();
+
+  // 入力された値の管理
   const [formData, setFormData] = useState<TaskFormData>({
     title: "",
     description: "",
@@ -27,10 +32,16 @@ export default function TaskFormContainer() {
     }));
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await createTask(formData);
+    router.push("/tasks");
+  };
+
   return (
     <div className={styles.container}>
       <h1>新規タスク作成</h1>
-      <TaskForm onChange={handleChange} formData={formData} />
+      <TaskForm onChange={handleChange} formData={formData} onSubmit={handleSubmit}/>
 
       <div className={styles.cancelContainer}>
         <Link href="/tasks" className={styles.cancelLink}>
