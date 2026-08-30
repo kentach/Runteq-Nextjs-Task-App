@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/taskDetail.module.css";
+import styles from "../styles/TaskDetail.module.css";
 import type { Task } from "@/app/types/task";
 import { getPriorityClass } from "../utils/priority";
 import { getStatusLabel } from "../utils/status-label";

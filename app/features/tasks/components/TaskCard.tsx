@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Task } from "@/app/types/task";
-import styles from "../styles/taskCard.module.css";
+import styles from "../styles/TaskCard.module.css";
 import { getStatusLabel } from "../utils/status-label";
 import { getPriorityClass } from "../utils/priority";
 
