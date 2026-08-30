@@ -6,6 +6,7 @@ import type { Task } from "@/app/types/task";
 import { useParams } from "next/navigation";
 import TaskDetail from "../components/TaskDetail";
 import styles from "../styles/TaskDetail.module.css";
+import TaskDeleteButton from "../components/TaskDeleteButton";
 
 export default function TaskShowContainer() {
   const params = useParams<{ id?: string }>();
@@ -40,6 +41,9 @@ export default function TaskShowContainer() {
   return (
     <div className={styles.taskDetailContainer}>
       <TaskDetail task={task} />
+      <div>
+        <TaskDeleteButton />
+      </div>
     </div>
   );
 }
