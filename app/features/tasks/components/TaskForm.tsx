@@ -9,12 +9,14 @@ type TaskFormProps = {
     >,
   ) => void;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  id?: string
 };
 
 export default function TaskForm({
   onChange,
   formData,
   onSubmit,
+  id,
 }: TaskFormProps) {
   return (
     <form className={styles.form} onSubmit={onSubmit}>
@@ -59,7 +61,7 @@ export default function TaskForm({
       </div>
 
       <button type="submit" className={styles.submitButton}>
-        作成する
+        {id ? "更新する" : "作成する"} {/* idの有無で編集か新規作成かを判定 */}
       </button>
     </form>
   );
